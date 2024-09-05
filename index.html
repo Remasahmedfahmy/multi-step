@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Multi-step form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="contaner_box">
+    <img src="bg-sidebar-desktop.svg" alt="">
+    <div class="boxes">
+      <div class="box_1">
+        <div id="num_1" class="num">1</div>
+        <h6 style="top: 23%;">Step 1</h6>
+        <h3 style="top: 30%;">Your info</h3>
+      </div>
+      <div class="box_2">
+        <div id="num_2" class="num">2</div>
+        <h6 style="top: 44%;">Step 2</h6>
+        <h3 style="top: 51%; width: 346%;">Select plan</h3>
+      </div>
+      <div class="box_3">
+        <div id="num_3" class="num">3</div>
+        <h6 style="top: 66%;">Step 3</h6>
+        <h3 style="top: 73%;">Add-ons</h3>
+      </div>
+      <div class="box_4">
+        <div id="num_4" class="num">4</div>
+        <h6 style="top: 87%;">Step 4</h6>
+        <h3 style="top: 94%;">Summary</h3>
+      </div>
+    </div>
+    <div id="main_1" class="main">
+      <h1>Personal info</h1>
+      <p>  Please provide your name, email address, and phone number.</p>
+      <h4>Name</h4>
+      <input type="email" name="" placeholder="e.g. Stephen King" id="">
+      <h4>Email Address</h4>
+      <input type="email" name="" placeholder="e.g. stephenking@lorem.com" id="">
+      <h4>Phone Number</h4>
+      <input type="email" name="" placeholder="  e.g. +1 234 567 890" id="">
+      <button id="butt_1"> Next Step</button>
+    </div>
+    <!-- //////////////////////////////////////////////////////// -->
+    <div id="main_2" class="main_2">
+      <h1>Select your plan</h1>
+      <p>You have the option of monthly or yearly billing.</p>
+      <div class="inp_1">
+        <img src="icon-arcade.svg" alt="">
+        <h2>Arcade</h2>
+        <h4>$9/mo</h4>
+      </div>
+      <div class="inp_2">
+        <img src="icon-advanced.svg" alt="">
+        <h2>Advanced</h2>
+        <h4>$12/mo</h4>
+      </div>
+      <div class="inp_3">
+        <img src="icon-pro.svg" alt="">
+        <h2>Pro</h2>
+        <h4>$15/mo</h4>
+      </div>
+      <div class="years">
+        <h1 style="position: absolute; left: 27%;">Monthly</h1>
+        <h1 id="year" style="position: absolute; left: 60%;">Yearly</h1>
+        <div class="slid">
+          <div id="box" class="circle"></div>
+        </div>
+      </div>
+      <button id="butt_2"> Next Step</button>
+    </div>
+    <!-- //////////////////////////////////////////// -->
+      <div id="main_3" class="main_3">
+        <h1>  Pick add-ons</h1>
+        <p>  Add-ons help enhance your gaming experience.</p>
+        <div class="serv_1">
+          <input style="top: 38%;" type="checkbox" name="" id="">
+          <h2 style="top: 45%;">Online service</h2>
+          <p style="top: 52%;">Access to multiplayer games</p>
+          <h5 style="top: 47%;">+$1/mo</h5>
+        </div>
+        <div class="serv_2">
+          <input style="top: 74%;" type="checkbox" name="" id="">
+          <h2 style="top: 82%;">Larger storage</h2>
+          <p style="top: 90%;">Extra 1TB of cloud save</p>
+          <h5 style="top: 84%;">+$2/mo</h5>
+        </div>
+        <button id="butt_3">Confirm</button>
+      </div>
+      <!-- //////////////////////////////////////////////// -->
+        <div id="main_4" class="main_4">
+          <img src="icon-thank-you.svg" alt="">
+          <h1>  Thank you!</h1>
+          <p>
+              Thanks for confirming your subscription! We hope you have fun 
+              using our platform. If you ever need support, please feel free 
+              to email us at support@loremgaming.com.
+          </p>
+        </div>
+  </div>
+  <script>
+    let box = document.getElementById('box')
+    let year = document.getElementById('year')
+    box.onclick = function () {
+        box.classList.toggle("active")
+    }
+    // ///////////////////////////////////////
+    let butt_1 = document.getElementById('butt_1')
+    let butt_2 = document.getElementById('butt_2')
+    let butt_3 = document.getElementById('butt_3')
+    
+    let main_1 = document.getElementById('main_1')
+    let main_2 = document.getElementById('main_2')
+    let main_3 = document.getElementById('main_3')
+    let main_4 = document.getElementById('main_4')
+    
+    let num_1 = document.getElementById('num_1')
+    let num_2 = document.getElementById('num_2')
+    let num_3 = document.getElementById('num_3')
+    let num_4 = document.getElementById('num_4')
+    
+    butt_1.onclick = function(){
+      main_1.style.display = "none"
+      main_2.style.display = "inline"
+    }
+    butt_2.onclick = function(){
+      main_2.style.display = "none"
+      main_3.style.display = "inline"
+    }
+    butt_3.onclick = function(){
+      main_3.style.display = "none"
+      main_4.style.display = "inline"
+    }
+    
+    num_1.onclick = function(){
+      main_1.style.display = "inline"
+      main_2.style.display = "none"
+      main_3.style.display = "none"
+      main_4.style.display = "none"
+    }
+    num_2.onclick = function(){
+      main_1.style.display = "none"
+      main_2.style.display = "inline"
+      main_3.style.display = "none"
+      main_4.style.display = "none"
+    }
+    num_3.onclick = function(){
+      main_1.style.display = "none"
+      main_2.style.display = "none"
+      main_3.style.display = "inline"
+      main_4.style.display = "none"
+    }
+    num_4.onclick = function(){
+      main_1.style.display = "none"
+      main_2.style.display = "none"
+      main_3.style.display = "none"
+      main_4.style.display = "inline"
+    }
+  </script>
+</body>
+</html>
